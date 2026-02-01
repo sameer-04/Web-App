@@ -1,0 +1,135 @@
+.header {
+  background: var(--surface);
+  backdrop-filter: var(--glass-blur);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  background: white;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.logo:hover .logo-icon {
+  transform: rotate(-5deg) scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.logo-text h1 {
+  font-size: 32px;
+  color: white;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+}
+
+.logo-tagline {
+  font-size: 11px;
+  color: #a1a1aa;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-link {
+  color: #a1a1aa;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.cart-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-badge {
+  background: white;
+  color: black;
+  font-size: 11px;
+  font-weight: 800;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -12px;
+  right: -15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.user-name {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 16px;
+  border-radius: 100px;
+}
+
+@media (max-width: 968px) {
+  .header-content {
+    padding: 16px 0;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .logo-text h1 {
+    font-size: 24px;
+  }
+}
